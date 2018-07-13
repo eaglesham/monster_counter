@@ -78,7 +78,7 @@ progress::-webkit-progress-value {
   }
 }
 
-div.ski-day-count {
+div.monster-attempt-count {
   display: flex;
   flex-wrap: wrap;
   font-size: 3em;
@@ -89,7 +89,7 @@ div.ski-day-count {
     justify-content: center;
     align-items: center;
 
-    &.total-days {
+    &.total-frankensteins-made {
       flex-basis: 100%;
       font-size: 2em;
 
@@ -98,7 +98,7 @@ div.ski-day-count {
       }
     }
 
-    &:not(.total-days) {
+    &:not(.total-frankensteins-made) {
       flex-basis: 50%;
     }
 

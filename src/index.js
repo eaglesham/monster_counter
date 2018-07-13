@@ -1,8 +1,10 @@
 import React from 'react'
 import { render } from 'react-dom'
+import { MonsterAttemptCount } from './components/MonsterCounter.js'
+
+window.React = React
 
 render(
-	<div>
-	</div>,
+	<MonsterAttemptCount />,
 	document.getElementById('react-container')
 )
