@@ -9,13 +9,19 @@ export const MonsterAttemptCount = React.createClass({
         return (
             <div className="monster-attempt-count">
                 <div className="total-frankensteins-made">
-                    <span>5 Frankensteins</span>
+                    <span>{this.props.total}</span>
+                    <span>Frankensteins made</span>
                 </div>
                 <div className="humanBrain-frankensteins">
-                    <span>2 Frankensteins</span>
+                    <span>{this.props.humanBrain}</span>
+                    <span>with human brains</span>
                 </div>
                 <div className="insubordinate-frankensteins">
-                    <span>1 insubordinate Frankenstein</span>
+                    <span>{this.props.attackedCreator}</span>
+                    <span>insubordinate Frankensteins</span>
+                </div>
+                <div>
+                    <span>{this.props.goal}</span>    
                 </div>   
             </div>
 
