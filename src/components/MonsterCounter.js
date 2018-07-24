@@ -1,16 +1,16 @@
-import React from 'react'
+import { Component } from 'react'
 import '../stylesheets/ui.scss'
 
 //powder = humanBrain
 //backwoods = attackedCreator
 
-export const MonsterAttemptCount = React.createClass({
+export class MonsterAttemptCount extends Component {
     percentToDecimal(decimal) {
         return ((decimal * 100) + '%')
-    },
+    }
     calcGoalProgress(total, goal) {
         return this.percentToDecimal(total/goal)
-    },
+    }
     
     render() {
         return (
@@ -36,4 +36,4 @@ export const MonsterAttemptCount = React.createClass({
 
         )
     }
-})
+}
