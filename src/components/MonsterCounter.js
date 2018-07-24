@@ -5,6 +5,13 @@ import '../stylesheets/ui.scss'
 //backwoods = attackedCreator
 
 export const MonsterAttemptCount = React.createClass({
+    percentToDecimal(decimal) {
+        return ((decimal * 100) + '%')
+    },
+    calcGoalProgress(total, goal) {
+        return this.percentToDecimal(total/goal)
+    },
+    
     render() {
         return (
             <div className="monster-attempt-count">
@@ -21,7 +28,9 @@ export const MonsterAttemptCount = React.createClass({
                     <span>insubordinate Frankensteins</span>
                 </div>
                 <div>
-                    <span>{this.props.goal}</span>    
+                    <span>
+                        {this.calcGoalProgress(this.props.total, this.props.goal)}
+                    </span>    
                 </div>   
             </div>
 
