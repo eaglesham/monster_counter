@@ -1,4 +1,8 @@
 import '../stylesheets/ui.scss'
+import Body from 'react-icons/lib/io/man'
+import Hand from 'react-icons/lib/io/android-hand'
+import Pulse from 'react-icons/lib/io/ios-pulse-strong'
+import Flask from 'react-icons/lib/io/erlenmeyer-flask'
 
 //powder = humanBrain
 //backwoods = attackedCreator
@@ -13,14 +17,17 @@ export const MonsterAttemptCount = ({total, humanBrain, attackedCreator, goal}) 
     <div className="monster-attempt-count">
         <div className="total-frankensteins-made">
             <span>{total}</span>
+                <Flask />
             <span>Frankensteins made</span>
         </div>
         <div className="humanBrain-frankensteins">
             <span>{humanBrain}</span>
+                <Body />
             <span>with human brains</span>
         </div>
         <div className="insubordinate-frankensteins">
             <span>{attackedCreator}</span>
+                <Hand />
             <span>insubordinate Frankensteins</span>
         </div>
         <div>
