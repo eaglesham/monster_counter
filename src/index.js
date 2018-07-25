@@ -1,13 +1,31 @@
 import React from 'react'
 import { render } from 'react-dom'
-import { MonsterAttemptCount } from './components/MonsterCounter.js'
+import { MonsterAttemptList } from './components/MonsterAttemptList.js'
 
 window.React = React
 
 render(
-	<MonsterAttemptCount total={50}
-						 humanBrain={20}
-						 attackedCreator={10}
-						 goal={100} />,
+	<MonsterAttemptList days={
+		[
+			{
+				voltage: "200k v",
+				date: new Date("1/2/2016"),
+				humanBrain: true,
+				attackedCreator: false
+			},
+			{
+				voltage: "400k v",
+				date: new Date("2/12/2016"),
+				humanBrain: true,
+				attackedCreator: true
+			},
+			{
+				voltage: "800k v",
+				date: new Date("4/6/2016"),
+				humanBrain: false,
+				attackedCreator: true
+			}
+		]
+	} />,
 	document.getElementById('react-container')
 )
