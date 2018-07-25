@@ -1,6 +1,7 @@
 import { Component } from 'react'
 import { MonsterAttemptList } from './MonsterAttemptList'
 import { MonsterCounter } from './MonsterCounter'
+import { AddMonsterForm } from './AddMonsterForm'
 
 export class App extends Component {
     constructor(props) {
@@ -40,10 +41,14 @@ export class App extends Component {
     render() {
         return (
             <div className="app">
-                <MonsterAttemptList monsters={this.state.allMonsters} />
+            {(this.props.location.pathname === "/") ? 
                 <MonsterCounter total={this.countMonsters()} 
-                                humanBrain={this.countMonsters("humanBrain")} 
-                                attackedCreator={this.countMonsters("attackedCreator")} />
+                humanBrain={this.countMonsters("humanBrain")} 
+                attackedCreator={this.countMonsters("attackedCreator")} /> : 
+            (this.props.location.pathname === "/add-monster") ? 
+                <AddMonsterForm /> :
+                <MonsterAttemptList monsters={this.state.allMonsters} />
+            }                
             </div>
         )
     }
