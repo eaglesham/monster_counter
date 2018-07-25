@@ -43,6 +43,6 @@ export const MonsterAttemptCount = ({total=0, humanBrain=0, attackedCreator=0, g
 MonsterAttemptCount.PropTypes = {
     total: PropTypes.number,
     humanBrain: PropTypes.number,
-    attackedCreator: PropTypes.number
-
+    attackedCreator: PropTypes.number,
+    goal: PropTypes.number
 }
