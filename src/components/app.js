@@ -2,6 +2,7 @@ import { Component } from 'react'
 import { MonsterAttemptList } from './MonsterAttemptList'
 import { MonsterCounter } from './MonsterCounter'
 import { AddMonsterForm } from './AddMonsterForm'
+import { Menu } from './Menu'
 
 export class App extends Component {
     constructor(props) {
@@ -41,6 +42,7 @@ export class App extends Component {
     render() {
         return (
             <div className="app">
+            <Menu />
             {(this.props.location.pathname === "/") ? 
                 <MonsterCounter total={this.countMonsters()} 
                 humanBrain={this.countMonsters("humanBrain")} 
