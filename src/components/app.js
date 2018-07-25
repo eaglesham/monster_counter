@@ -1,4 +1,6 @@
 import { createClass } from 'react'
+import { MonsterAttemptList } from './MonsterAttemptList'
+import { MonsterCounter } from './MonsterCounter'
 
 export const App = createClass({
     getInitialState() {
@@ -25,10 +27,19 @@ export const App = createClass({
             ]
         }
     },
+    countMonsters(filter) {
+      const { allMonsters } = this.state 
+      
+      return allMonsters.filter(
+          monster => (filter ? monster[filter] : monster)).length 
+    },
     render() {
         return (
             <div className="app">
-                {this.state.allMonsters[0]["voltage"]}
+                <MonsterAttemptList monsters={this.state.allMonsters} />
+                <MonsterCounter total={this.countMonsters()} 
+                                humanBrain={this.countMonsters("humanBrain")} 
+                                attackedCreator={this.countMonsters("attackedCreator")} />
             </div>
         )
     }

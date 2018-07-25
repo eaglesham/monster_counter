@@ -15,7 +15,7 @@ const calcGoalProgress = (total, goal) => {
 }
 
 // this is a 'stateless functional component', as oppposed to the es6 class: export class MonsterAttemptCount extends Component {...}-- have to also add import { Component } from React at top
-export const MonsterAttemptCount = ({total=0, humanBrain=0, attackedCreator=0, goal=1}) => (
+export const MonsterCounter = ({total=0, humanBrain=0, attackedCreator=0, goal=1}) => (
     <div className="monster-attempt-count">
         <div className="total-frankensteins-made">
             <span>{total}</span>
@@ -40,7 +40,7 @@ export const MonsterAttemptCount = ({total=0, humanBrain=0, attackedCreator=0, g
     </div>
 )
 
-MonsterAttemptCount.PropTypes = {
+MonsterCounter.PropTypes = {
     total: PropTypes.number,
     humanBrain: PropTypes.number,
     attackedCreator: PropTypes.number,
