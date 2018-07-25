@@ -4,7 +4,7 @@ import Pulse from 'react-icons/lib/io/ios-pulse-strong'
 import Flask from 'react-icons/lib/io/erlenmeyer-flask'
 import { PropTypes } from 'react'
 
-export const MonsterAttemptRow = ({voltage, date, humanBrain, attackedCreator}) => (
+export const MonsterAttemptRow = ({voltage, date, humanbrain, attackedcreator}) => (
     <tr>
         <td>
             {date.getMonth()+1}/{date.getDate()}/{date.getFullYear()}
@@ -13,10 +13,10 @@ export const MonsterAttemptRow = ({voltage, date, humanBrain, attackedCreator}) 
             {voltage}
         </td>
         <td>
-            {(humanBrain) ? <Body /> : null}
+            {(humanbrain) ? <Body /> : null}
         </td>
         <td>
-            {(attackedCreator) ? <Hand /> : null}
+            {(attackedcreator) ? <Hand /> : null}
         </td>
     </tr>
 )

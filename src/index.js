@@ -10,7 +10,9 @@ window.React = React
 render(
 	<Router history={hashHistory} >
 		<Route path="/" component={App}/>
-		<Route path="list-monsters" component={App} />
+		<Route path="list-monsters" component={App}>
+			<Route path=":filter" component={App}/>
+		</Route>
 		<Route path="add-monster" component={App} />
 		<Route path="*" component={Whoops404}/>
 	</Router>,

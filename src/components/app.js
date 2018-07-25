@@ -13,20 +13,20 @@ export class App extends Component {
                 {
                     voltage: "200k v",
                     date: new Date("1/2/2016"),
-                    humanBrain: true,
-                    attackedCreator: false
+                    humanbrain: true,
+                    attackedcreator: false
                 },
                 {
                     voltage: "400k v",
                     date: new Date("2/12/2016"),
-                    humanBrain: true,
-                    attackedCreator: true
+                    humanbrain: true,
+                    attackedcreator: true
                 },
                 {
                     voltage: "800k v",
                     date: new Date("4/6/2016"),
-                    humanBrain: false,
-                    attackedCreator: true
+                    humanbrain: false,
+                    attackedcreator: true
                 }
             ]
         }
@@ -49,7 +49,7 @@ export class App extends Component {
                 attackedCreator={this.countMonsters("attackedCreator")} /> : 
             (this.props.location.pathname === "/add-monster") ? 
                 <AddMonsterForm /> :
-                <MonsterAttemptList monsters={this.state.allMonsters} />
+                <MonsterAttemptList monsters={this.state.allMonsters} filter={this.props.params.filter}/>
             }                
             </div>
         )
