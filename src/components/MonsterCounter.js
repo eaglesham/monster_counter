@@ -13,7 +13,7 @@ const calcGoalProgress = (total, goal) => {
     return percentToDecimal(total/goal)
 }
 
-export const MonsterAttemptCount = ({total, humanBrain, attackedCreator, goal}) => (
+export const MonsterAttemptCount = ({total=0, humanBrain=0, attackedCreator=0, goal=1}) => (
     <div className="monster-attempt-count">
         <div className="total-frankensteins-made">
             <span>{total}</span>
