@@ -1,10 +1,12 @@
-import { createClass } from 'react'
+import { Component } from 'react'
 import { MonsterAttemptList } from './MonsterAttemptList'
 import { MonsterCounter } from './MonsterCounter'
 
-export const App = createClass({
-    getInitialState() {
-        return {
+export class App extends Component {
+    constructor(props) {
+        super(props)
+        // inital state here
+        this.state = {
             allMonsters: [
                 {
                     voltage: "200k v",
@@ -26,13 +28,15 @@ export const App = createClass({
                 }
             ]
         }
-    },
+    }
+
     countMonsters(filter) {
       const { allMonsters } = this.state 
       
       return allMonsters.filter(
           monster => (filter ? monster[filter] : monster)).length 
-    },
+    }
+
     render() {
         return (
             <div className="app">
@@ -43,4 +47,4 @@ export const App = createClass({
             </div>
         )
     }
-})
+}
