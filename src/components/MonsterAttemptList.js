@@ -5,7 +5,7 @@ import Flask from 'react-icons/lib/io/erlenmeyer-flask'
 import { MonsterAttemptRow } from './MonsterAttemptRow.js'
 import { PropTypes } from 'react'
 
-export const MonsterAttemptList = ({days}) => (
+export const MonsterAttemptList = ({monsters}) => (
 
     <table>
         <thead>
@@ -17,9 +17,9 @@ export const MonsterAttemptList = ({days}) => (
             </tr>
         </thead>
         <tbody>
-            {days.map((day, i) => 
+            {monsters.map((monster, i) => 
                 <MonsterAttemptRow key={i} 
-                                   {...day} />
+                                   {...monster} />
             )}
         </tbody>
     </table>
