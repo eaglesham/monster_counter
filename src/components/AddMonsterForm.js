@@ -1,5 +1,29 @@
-import { PropTypes } from 'react'
+import { PropTypes, Component } from 'react'
 
+const voltageOptions = ["20,000v", "40,000v", "60,000v", "80,000v", "100,000v", "200,000v", "1,000,000v"]
+
+class Autocomplete extends Component {
+    get value() {
+        return this.refs.inputVoltage.value
+    }
+
+    set value(inputValue) {
+        this.refs.inputVoltage.value = inputValue
+    }
+
+    render() {
+        return (
+            <div>
+                <input ref="inputVoltage" type="text" list="voltage-options" />
+                <datalist id="voltage-options">
+                    {this.props.options.map((opt, i) => 
+                        <option key={i}>{opt}</option>
+                    )}
+                </datalist>
+            </div>
+        )
+    }
+}
 export const AddMonsterForm = ({ voltage, date, humanBrain, attackedCreator, onNewMonster }) => {
     let _voltage, _date, _humanBrain, _attackedCreator
     
@@ -20,7 +44,7 @@ export const AddMonsterForm = ({ voltage, date, humanBrain, attackedCreator, onN
     return (
         <form onSubmit={submit} className="add-monster-form">
             <label htmlFor="voltage">Voltage</label>
-            <input id="voltage" type="text" required defaultValue={voltage} ref={input => _voltage = input} />
+            <Autocomplete options={voltageOptions} ref={input => _voltage = input} />
             
             <label htmlFor="date">Date</label>
             <input id="date" type="date" required defaultValue={date} ref={input => _date = input}/>
