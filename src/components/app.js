@@ -12,26 +12,22 @@ export class App extends Component {
             allMonsters: [
                 {
                     voltage: "200k v",
-                    date: new Date("1/2/2016"),
+                    date: "2016-01-02",
                     humanbrain: true,
                     attackedcreator: false
-                },
-                {
-                    voltage: "400k v",
-                    date: new Date("2/12/2016"),
-                    humanbrain: true,
-                    attackedcreator: true
-                },
-                {
-                    voltage: "800k v",
-                    date: new Date("4/6/2016"),
-                    humanbrain: false,
-                    attackedcreator: true
                 }
             ]
         }
+        this.addMonster = this.addMonster.bind(this)
     }
-
+    addMonster(newMonster) {
+        this.setState({
+            allMonsters: [
+                ...this.state.allMonsters,
+                newMonster
+            ]
+        })
+    }
     countMonsters(filter) {
       const { allMonsters } = this.state 
       
@@ -48,7 +44,7 @@ export class App extends Component {
                 humanBrain={this.countMonsters("humanBrain")} 
                 attackedCreator={this.countMonsters("attackedCreator")} /> : 
             (this.props.location.pathname === "/add-monster") ? 
-                <AddMonsterForm /> :
+                <AddMonsterForm onNewMonster={this.addMonster} /> :
                 <MonsterAttemptList monsters={this.state.allMonsters} filter={this.props.params.filter}/>
             }                
             </div>

@@ -1,14 +1,20 @@
-import { PropTypes, Component } from 'react'
+import { PropTypes } from 'react'
 
-export const AddMonsterForm = ({ voltage, date, humanBrain, attackedCreator }) => {
+export const AddMonsterForm = ({ voltage, date, humanBrain, attackedCreator, onNewMonster }) => {
     let _voltage, _date, _humanBrain, _attackedCreator
     
     const submit = (e) => {
         e.preventDefault()
-        console.log('voltage', _voltage.value)
-        console.log('date', _date.value)
-        console.log('human brain', _humanBrain.checked)
-        console.log('attacked creator', _attackedCreator.checked)
+        onNewMonster({
+            voltage: _voltage.value,
+            date: _date.value,
+            humanBrain: _humanBrain.checked,
+            attackedCreator: _attackedCreator.checked
+        })
+        _voltage.value = ""
+        _date.value = ""
+        _humanBrain.checked = false
+        _attackedCreator.checked = false
     }
 
     return (
